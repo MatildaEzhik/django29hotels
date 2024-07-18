@@ -1,0 +1,10 @@
+{% extends 'hotels/base.html' %}
+
+{% block content %}
+    <h2>забронировать номер</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">забронироваоть</button>
+    </form>
+{% endblock %}

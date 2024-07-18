@@ -1,0 +1,8 @@
+{% extends 'hotels/base.html' %}
+
+{% block content %}
+    <h2>{{ room }}</h2>
+    <p>{{ room.description }}</p>
+    <p>цена за 24-часа: {{ room.price_per_night }}</p>
+    <img src="{{ room.photo.url }}" alt="{{ room.room_number }}">
+{% endblock %}

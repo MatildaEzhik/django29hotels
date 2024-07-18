@@ -1,0 +1,10 @@
+{% extends 'hotels/base.html' %}
+
+{% block content %}
+    <h2>создание и редактирование номера</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">сохранить</button>
+    </form>
+{% endblock %}

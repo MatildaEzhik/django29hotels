@@ -1,0 +1,15 @@
+{% extends 'hotels/base.html' %}
+
+{% block content %}
+    <h2>ваши брони номера(-ов)</h2>
+    <ul>
+        {% for booking in bookings %}
+            <li>
+                <p>бронь №{{ booking.id }} - {{ booking.room }}</p>
+                <p>дата заселения: {{ booking.check_in_date }}</p>
+                <p>дата выселения: {{ booking.check_out_date }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'booking_create' %}">забронировать новый номер</a>
+{% endblock %}

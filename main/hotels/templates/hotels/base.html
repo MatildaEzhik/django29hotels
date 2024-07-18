@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>default</title>
+</head>
+<body>
+    <header>
+        <h1>отели</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'room_list' %}">номера</a></li>
+                <li><a href="{% url 'booking_list' %}">бронирование</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout' %}">выход</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">вход</a></li>
+                    <li><a href="{% url 'signup' %}">регистрация</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>
